@@ -35,12 +35,30 @@
     .pill{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:14px;margin:4px 6px 0 0}
     .list-tight li{margin:4px 0}
     footer{margin-top:32px;color:var(--muted);font-size:14px;text-align:center}
-    .small{font-size:14px;color:var(--muted)}
     .section-title{display:flex;align-items:center;gap:10px}
     .section-title::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
   </style>
 </head>
 <body>
+  <!-- 🌍 Language Toggle -->
+  <div style="
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(30, 40, 60, 0.85);
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #3b4a6b;
+    font-family: system-ui, sans-serif;
+    z-index: 1000;
+  ">
+    <span style="color: #a8b3c7;">🌐</span>
+    <a href="https://martharodriguezhoyos.github.io/presentacion-profesional/"
+       style="color: #e8eefc; text-decoration: none; margin: 0 6px;">Español 🇪🇸</a> |
+    <a href="https://martharodriguezhoyos.github.io/professional-presentation/"
+       style="color: #6aa6ff; text-decoration: none; margin: 0 6px;">English 🇬🇧</a>
+  </div>
+
   <div class="wrap">
     <header>
       <div>
@@ -51,7 +69,7 @@
 
     <div class="card">
       <div class="section-title"><h2>Executive Profile</h2></div>
-      <p>Highly accomplished and results‑oriented Finance &amp; Administration executive from Ecuador, based in Panama, with 30 years of progressive experience in large‑scale international infrastructure and construction— including significant tenures within Webuild. Proven expertise in strategic financial management, full‑cycle project administration, and SAP FI/CO for multi‑million‑dollar projects. Combines leadership of multinational teams with an MBA in Corporate Finance (ADEN, 2025). Open to international assignments.</p>
+      <p>Highly accomplished and results‑oriented Finance &amp; Administration executive from Ecuador, based in Panama, with 30 years of progressive experience in large‑scale international infrastructure and construction — including significant tenures within Webuild. Proven expertise in strategic financial management, full‑cycle project administration, and SAP FI/CO for multi‑million‑dollar projects. Combines leadership of multinational teams with an MBA in Corporate Finance (ADEN, 2025). Open to international assignments and relocation.</p>
       <div class="contact">
         <span>📍 Panama</span>
         <span>•</span>
@@ -69,7 +87,7 @@
           <div class="section-title"><h2>Core Competencies</h2></div>
           <h3>Project Management</h3>
           <ul class="list-tight">
-            <li>Strategic Financial Planning (&gt;USD 3M)</li>
+            <li>Strategic Financial Planning (&gt; USD 3M)</li>
             <li>Full Project Administration</li>
             <li>Cost Control &amp; Budgeting</li>
             <li>Megaprojects (Infrastructure)</li>
@@ -83,7 +101,7 @@
           </ul>
           <h3>Claims Management</h3>
           <ul class="list-tight">
-            <li>Financial Quantification (&gt;USD 3B)</li>
+            <li>Financial Quantification (&gt; USD 3B)</li>
             <li>Claim Preparation &amp; Justification</li>
             <li>Arbitration Procedures</li>
             <li>Contract Negotiation</li>
@@ -138,7 +156,7 @@
 
           <h3>SALINI‑IMPREGILO / Webuild — Venezuela</h3>
           <p><strong>General Accounting &amp; Administration Manager</strong> | Jan 2007 – Feb 2013</p>
-          <p>Infrastructure projects ~USD 3,000 million (railways, dams).</p>
+          <p>Infrastructure projects ~ USD 3,000 million (railways, dams).</p>
           <ul>
             <li>Led General Accounting and Treasury</li>
             <li>Managed estimates and comprehensive budgets</li>
@@ -184,6 +202,17 @@
   </div>
 
   <script>
+    // 🌐 Auto-redirect to Spanish site if the browser language is Spanish
+    (function(){
+      try{
+        const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        const isSpanish = lang.startsWith('es');
+        const onEnglishSite = location.href.includes('professional-presentation');
+        if (isSpanish && onEnglishSite) {
+          location.replace('https://martharodriguezhoyos.github.io/presentacion-profesional/');
+        }
+      }catch(e){/* no-op */}
+    })();
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
